@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>
+            <%=title%>
+        </title>
+    </head>
+    <body>
+        <h1>TODO App</h1>
+
+        <form action="">
+            <label for="description">Description</label>
+            <textarea name="description" id="description" cols="30" rows="10" required placeholder="What you need to do">
+
+            </textarea>
+        </form>
+
+        <label for="category">Category</label>
+        <select name="category" id="category">
+            <option value="Personal">Personal</option>
+            <option value="School">School</option>
+            <option value="Work">Work</option>
+            <option value="Others">Others</option>
+            <option value="Special">Special</option>
+
+        </select>
+
+        <label for="due_date">Due Date</label>
+        <input type="date" id="due_date" name="due_date">
+
+        <input type="submit" value="add task">
+
+       
+
+    </body>
+
+
+</html>
