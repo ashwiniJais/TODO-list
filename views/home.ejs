@@ -3,31 +3,45 @@
         <title>
             <%=title%>
         </title>
+        <script src="https://use.fontawesome.com/releases/v5.15.2/js/all.js" data-auto-replace-svg="nest"></script>
+        <link rel="stylesheet" href="/css/home.css">
     </head>
     <body>
-        <h1>TODO App</h1>
+        <h1>TODO List</h1>
 
+        <h2>Add a task</h2>
         <form action="/addtask" method="post">
-            <label for="description">Description</label>
-            <textarea name="description" id="description" cols="30" rows="10" required placeholder="What you need to do">
+            
+            <label for="description">Add task to do</label>
+            <textarea name="description" id="description" cols="" rows="5" placeholder="What you need to do" required >
 
             </textarea>
         
+        <div id="for_inputs">
 
+        <div>
         <label for="category">Category</label>
-        <select name="category" id="category">
+        <select name="category" id="category" >
+            <option value="" selected style="display:none">Category of work</option>
+           
             <option value="Personal">Personal</option>
+            
             <option value="School">School</option>
             <option value="Work">Work</option>
             <option value="Others">Others</option>
             <option value="Special">Special</option>
-
+     
         </select>
+        </div>
 
+        <div>
         <label for="due_date">Due Date</label>
         <input type="date" id="due_date" name="due_date">
+        </div>
+        
+    </div>  
 
-        <input type="submit" value="add task">
+        <input type="submit" value="Add task" id="btn">
 
     </form>
 
@@ -36,9 +50,17 @@
         <% for(let i of todo_list){ %>
            
            <li>
-               <p> <%=i.description%>    </p>
-               <p> <%=i.category%>    </p>
-               <p> <%=i.due_date%>    </p>
+               <div class="task_todo">
+               <p class="display"> 
+                   <span id="des"><%=i.description%> </span>   
+                    <span id="cat"><%=i.category%>   </span>
+                </p>
+                </div>
+
+                <a href="/delete-task/?id=<%=i.id%>"><button>Delete Task</button></a>
+
+                <p id="date"> <i class="fas fa-calendar-week"></i> <%=i.due_date%>    </p>
+                
            </li>
            
       <% } %> 
