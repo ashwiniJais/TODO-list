@@ -8,5 +8,6 @@ const homeController=require('../controllers/home_controller');
 console.log("router connected succesfully");
 
 router.get('/', homeController.home);
+router.post('/addtask',homeController.addTask);
 
 module.exports = router;

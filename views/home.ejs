@@ -7,12 +7,12 @@
     <body>
         <h1>TODO App</h1>
 
-        <form action="">
+        <form action="/addtask" method="post">
             <label for="description">Description</label>
             <textarea name="description" id="description" cols="30" rows="10" required placeholder="What you need to do">
 
             </textarea>
-        </form>
+        
 
         <label for="category">Category</label>
         <select name="category" id="category">
@@ -29,8 +29,22 @@
 
         <input type="submit" value="add task">
 
-       
+    </form>
 
+
+    <ul>
+        <% for(let i of todo_list){ %>
+           
+           <li>
+               <p> <%=i.description%>    </p>
+               <p> <%=i.category%>    </p>
+               <p> <%=i.due_date%>    </p>
+           </li>
+           
+      <% } %> 
+   </ul> 
+
+   
     </body>
 
 
